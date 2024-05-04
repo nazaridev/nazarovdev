@@ -1,0 +1,27 @@
+name: CI/CD
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build
+        run: npm run build
+
+      - name: Deploy to Vercel
+        uses: amondnet/vercel-deployment@v20
+        with:
+          vercelToken: 'q9rOj3OcvqCe3o4ZIkuywtk1'
+          vercelProjectId: 'prj_ZwAR8CQ0vrtviYv3gZrwTpZjbtnc'
+          args: '--prod'
