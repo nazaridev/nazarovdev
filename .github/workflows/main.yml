@@ -20,7 +20,7 @@ jobs:
         run: npm run build
 
       - name: Deploy to Vercel
-        uses: vercel/vercel-action@v2
+        uses: nazaridev/nazarovdev
         with:
           vercelToken: 'q9rOj3OcvqCe3o4ZIkuywtk1'
           vercelProjectId: 'prj_ZwAR8CQ0vrtviYv3gZrwTpZjbtnc'
